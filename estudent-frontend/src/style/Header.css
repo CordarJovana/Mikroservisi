@@ -1,0 +1,13 @@
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #f9f9f9;
+}
+
+img {
+    margin-left: 25px;
+    max-width: 131%;
+    max-height: 135%;
+}

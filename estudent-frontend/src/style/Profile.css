@@ -1,0 +1,87 @@
+.profile-table {
+  margin-top: 50px;
+  width: 77%;
+  border-collapse: collapse;
+  border: 2px solid black;
+  margin-left: 177px;
+}
+
+.profile-table td {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  color: #3e92cc;
+}
+
+.profile-table td:first-child {
+  font-weight: bold;
+  width: 200px;
+}
+
+.profile-table td:last-child {
+  text-align: center;
+}
+
+.profile-table tr:last-child td {
+  border-bottom: none;
+}
+
+.password-change-container {
+  margin-top: 40px;
+}
+
+.password-change-label {
+  margin-left: 176px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3e92cc;
+}
+
+.password-change-label:hover{
+  text-decoration: underline #3e92cc;
+}
+
+.password-change-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.password-change-form label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.password-change-form label>span {
+  margin-right: 10px;
+}
+
+.password-change-form input[type="password"] {
+  width: 200px;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.password-change-form button {
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.password-change-form button:hover {
+  background-color: #3e8e41;
+  cursor: pointer;
+}
+
+.password-change-message{
+  margin-left: 145px;
+  font-size: 14px;
+}

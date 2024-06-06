@@ -1,0 +1,39 @@
+.form-element {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.label {
+    flex-basis: 30%;
+}
+
+.input {
+    flex-basis: 70%;
+    margin-left: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.login-button {
+    width: 150px;
+    height: 45px;
+    background-color: #3e92cc;
+}
+
+.password-input-field {
+    margin-left: 32px !important;
+}
+
+.MuiInputBase-input {
+    height: 5px !important;
+}
+
+.login-form-container{
+    border-radius: 25%;
+    border: #3e92cc;
+}

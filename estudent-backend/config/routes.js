@@ -1,0 +1,15 @@
+module.exports.routes = {
+  '/': { view: 'pages/homepage' },
+  'GET /getAllStudents': 'StudentController.getAll',
+  'POST /login': 'StudentController.login',
+  'GET /logout': 'StudentController.logout',
+  'GET /getStudent/:id': 'StudentController.getStudentById',
+  'POST /changepassword/:id': 'StudentController.changePassword',
+  'GET /getAllExamsReg/:id': 'IspitController.getAllExamsReg',
+  'GET /getAllStudentExams/:id': 'IspitController.getAllStudentExams',
+  'GET /getActiveExamRegistrations/:id': 'IspitController.getActiveExamRegistrations',
+  'GET /getAllExamDeadlines': 'IspitniRokController.getAllExamDeadlines',
+  'GET /checkNotifications/:id': 'NotifikacijeKontroler.checkNotifications',
+  'GET /getAllStudentSubjects/:id': 'PredmetController.getAllStudentSubjects',
+  'GET /getActiveNews': 'ObavestenjaController.getActiveNews',
+};

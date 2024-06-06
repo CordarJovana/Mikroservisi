@@ -1,0 +1,27 @@
+.subject-header{
+    font-size: 18px;
+    font-weight: 600;
+    color: #3e92cc;
+}
+.subject-header:hover{
+    text-decoration: underline #3e92cc;
+  }
+.subject{
+    margin-left: 153px;
+    margin-top: 30px;
+}
+
+.table-profesori{
+    width: 500px;
+}
+
+.subject-details{
+    margin-top: 10px;
+}
+
+.profesori-table-header{
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #3e92cc; 
+}

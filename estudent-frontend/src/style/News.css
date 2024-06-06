@@ -1,0 +1,22 @@
+.news-title{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.news-text{
+    margin-top: 5px;
+    color: white;
+    margin-left: 3px;
+}
+
+.news-container{
+    margin-top: 20px;
+    margin-left: 60px;
+    background-color: #3e92cc;
+    border-radius: 8px;
+    width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

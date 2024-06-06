@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_password
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_user_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./estudent.sql:/docker-entrypoint-initdb.d/estudent.sql
+    networks:
+      - myapp-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pmy_secret_password"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8080:80
+    networks:
+      - myapp-network
+
+  database:
+    build:
+      context: ./estudent-database
+    ports:
+      - "4185:4185"
+    depends_on:
+      db:
+        condition: service_healthy
+      phpmyadmin:
+        condition: service_started
+    volumes:
+      - ./estudent-models-1.0.0.tgz:/app/estudent-database/estudent-models-1.0.0.tgz
+    networks:
+      - myapp-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:4185/ || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    restart: always
+
+  frontend:
+    build:
+      context: ./estudent-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - myapp-network
+    restart: always
+
+  backend:
+    build:
+      context: ./estudent-backend
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./estudent-models-1.0.0.tgz:/app/estudent-backend/estudent-models-1.0.0.tgz
+    networks:
+      - myapp-network
+    restart: always
+
+  exams:
+    build:
+      context: ./estudent-exams
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./estudent-models-1.0.0.tgz:/app/estudent-exams/estudent-models-1.0.0.tgz
+    networks:
+      - myapp-network
+    restart: always
+
+volumes:
+  dbdata:
+
+networks:
+  myapp-network:
+    driver: bridge

@@ -1,0 +1,30 @@
+.profile-bar {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #3e92cc;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  
+  .profile-icon {
+    margin-right: 18px;
+  }
+  
+  .profile-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logout-label {
+    margin-right: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .logout-label:hover {
+    text-decoration: underline white;
+}

@@ -1,0 +1,21 @@
+.title-container {
+    position: relative;
+    margin-top: 100px;
+    margin-left: 150px;
+  }
+  
+  .title-label {
+    font-size: 24px;
+    font-weight: bold;
+    color:  #3e92cc;
+  }
+  
+  .title-underline {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 70px;
+    height: 2px;
+    background-color: #000;
+  }
+  
