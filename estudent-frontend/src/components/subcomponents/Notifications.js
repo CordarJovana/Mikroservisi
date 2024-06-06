@@ -13,7 +13,7 @@ function Notifications(props) {
   useEffect(() => {
     async function checkNotifications() {
       try {
-        const response = await axios.get(`http://localhost:1337/checkNotifications/${id}`);
+        const response = await axios.get(`http://backend:1337/checkNotifications/${id}`);
         if (response.data.newNotifications && response.data.newNotifications.length > 0) {
           addNotifications(response.data.newNotifications);
         }

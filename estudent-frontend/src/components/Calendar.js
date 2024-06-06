@@ -14,8 +14,8 @@ function Calendar(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responseExamDates = await axios.get(`http://localhost:1337/getAllExamsReg/${id}`);
-        const responseExamRegistrations = await axios.get(`http://localhost:1337/getAllExamDeadlines`);
+        const responseExamDates = await axios.get(`http://backend:1337/getAllExamsReg/${id}`);
+        const responseExamRegistrations = await axios.get(`http://backend:1337/getAllExamDeadlines`);
         setExamDates(responseExamDates.data);
         setExamRegistrations(responseExamRegistrations.data);
       } catch (error) {

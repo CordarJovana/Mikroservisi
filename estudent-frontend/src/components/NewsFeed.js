@@ -10,7 +10,7 @@ function NewsFeed() {
     useEffect(() => {
         async function fetchNews() {
             try {
-                const response = await axios.get('http://localhost:1337/getActiveNews');
+                const response = await axios.get('http://backend:1337/getActiveNews');
                 setNews(response.data.activeNews);
             } catch (error) {
                 console.error(error);

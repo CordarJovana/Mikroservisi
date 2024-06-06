@@ -13,7 +13,7 @@ function ExamDeadlines() {
     const [columns, setColumns] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:1337/getAllExamDeadlines`)
+        axios.get(`http://backend:1337/getAllExamDeadlines`)
             .then(response => {
                 const examDeadlines = response.data;
                 const formattedData = examDeadlines.map(deadline => {

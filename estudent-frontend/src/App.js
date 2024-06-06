@@ -8,7 +8,7 @@ function App() {
   const [student, setStudent] = useState({});
 
   const handleLogin = async (username, password) => {
-    const response = await axios.post("http://localhost:1337/login", {
+    const response = await axios.post("http://backend:1337/login", {
       username,
       password,
     });
@@ -22,7 +22,7 @@ function App() {
   };
 
   const handleLogout = async () => {
-    const response = await axios.get("http://localhost:1337/logout");
+    const response = await axios.get("http://backend:1337/logout");
     if (response.status === 200) {
       setIsLoggedIn(false);
     } else {

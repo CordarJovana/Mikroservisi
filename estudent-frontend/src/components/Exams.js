@@ -17,7 +17,7 @@ function Exams(props) {
     const [nonPassedExamsColumns, setNonPassedExamsColumns] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:1337/getAllStudentExams/${id}`)
+        axios.get(`http://backend:1337/getAllStudentExams/${id}`)
           .then(response => {
             const passedExams = response.data.passedExams;
             const nonPassedExams = response.data.nonPassedExams;
