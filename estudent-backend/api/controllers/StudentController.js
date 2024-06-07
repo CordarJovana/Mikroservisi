@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
   getAll: async function (req, res) {
     try {
-      const apiURL = 'http://database:4185/students/getAll';
+      const apiURL = 'http://34.29.210.251:4185/students/getAll';
       const response = await axios.get(apiURL);
       const students = response.data.students;
 
@@ -14,7 +14,7 @@ module.exports = {
   },
   getStudentById: async function (req, res) {
     const { id } = req.params;
-    const apiURL = 'http://database:4185/students/getStudentById';
+    const apiURL = 'http://34.29.210.251:4185/students/getStudentById';
     const response = await axios.get(apiURL + `/${id}`);
 
     return res.json(response.data);
@@ -23,7 +23,7 @@ module.exports = {
     try{
       const id = req.params.id;
       const { oldPassword, newPassword } = req.body;
-      const apiURL = 'http://database:4185/students/changePassword';
+      const apiURL = 'http://34.29.210.251:4185/students/changePassword';
       const response = await axios.post(apiURL + `/${id}/${oldPassword}/${newPassword}`);
   
       return res.json({responseStatus: 200, data: response.data});
@@ -34,7 +34,7 @@ module.exports = {
   login: async function (req, res) {
     try {
       const { username, password } = req.body;
-      const apiURL = 'http://database:4185/students/login';
+      const apiURL = 'http://34.29.210.251:4185/students/login';
       const response = await axios.post(apiURL + `/${username}/${password}`);
       //const status = response.status;
 

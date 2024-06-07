@@ -11,7 +11,7 @@ function ExamRegistration(props) {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://backend:1337/getActiveExamRegistrations/${id}`)
+        axios.get(`http://35.222.226.126:1337/getActiveExamRegistrations/${id}`)
             .then(response => {
                 const examRegistrationsExisting = response.data.withPrijave;
                 const examRegistrationsNonExisting = response.data.withoutPrijave;
@@ -27,7 +27,7 @@ function ExamRegistration(props) {
                             <button className="exam-registration-button" onClick={() => {
                                 const ispitId = registration.id;
                                 const studentId = id;
-                                axios.post(`http://exams:9000/deletePrijava`, { ispitId, studentId })
+                                axios.post(`http://34.28.30.203:900/deletePrijava`, { ispitId, studentId })
                                     .then(response => {
                                         console.log(response.data);
                                         setRefresh(!refresh);
@@ -49,7 +49,7 @@ function ExamRegistration(props) {
                             <button className="exam-registration-button" onClick={() => {
                                 const ispitId = registration.id;
                                 const studentId = id;
-                                axios.post('http://exams:9000/createNewPrijava', { ispitId, studentId })
+                                axios.post('http://34.28.30.203:900/createNewPrijava', { ispitId, studentId })
                                     .then(response => {
                                         console.log(response.data);
                                         setRefresh(!refresh);
