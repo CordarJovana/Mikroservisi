@@ -9,7 +9,7 @@ module.exports.routes = {
   'GET /getAllStudentExams/:id': 'IspitController.getAllStudentExams',
   'GET /getActiveExamRegistrations/:id': 'IspitController.getActiveExamRegistrations',
   'GET /getAllExamDeadlines': 'IspitniRokController.getAllExamDeadlines',
-  'GET /checkNotifications/:id': 'NotifikacijeController.checkNotifications',
+  'GET /checkNotifications/:id': 'ObavestenjaController.checkNotifications',
   'GET /getAllStudentSubjects/:id': 'PredmetController.getAllStudentSubjects',
   'GET /getActiveNews': 'ObavestenjaController.getActiveNews',
 };
