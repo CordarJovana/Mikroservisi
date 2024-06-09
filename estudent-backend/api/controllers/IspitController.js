@@ -4,7 +4,7 @@ const axios = require('axios');
 module.exports = {
   getAllExamsReg: async function (req, res) {
     const { id } = req.params;
-    const apiURL = 'http://34.29.210.251:4185/exams/getAllExamsReg';
+    const apiURL = 'http://34.72.160.161:4185/exams/getAllExamsReg';
     const response = await axios.get(apiURL + `/${id}`);
     var result = response.data;
 
@@ -12,7 +12,7 @@ module.exports = {
   },
   getActiveExamRegistrations: async function (req, res) {
     const { id } = req.params;
-    const apiURL = 'http://34.29.210.251:4185/exams/getActiveExamRegistrations';
+    const apiURL = 'http://34.72.160.161:4185/exams/getActiveExamRegistrations';
     const response = await axios.get(apiURL + `/${id}`);
     var withPrijave = response.data.withPrijave;
     var withoutPrijave = response.data.withoutPrijave;
@@ -21,14 +21,14 @@ module.exports = {
   },
   getFailedExams: async function (req, res) {
     const { id } = req.params;
-    const apiURL = 'http://34.29.210.251:4185/exams/getFailedExams';
+    const apiURL = 'http://34.72.160.161:4185/exams/getFailedExams';
     const response = await axios.get(apiURL + `/${id}`);
 
     return res.ok(response.data);
   },
   getAllStudentExams: async function (req, res) {
     const { id } = req.params;
-    const apiURL = 'http://34.29.210.251:4185/exams/getAllStudentExams';
+    const apiURL = 'http://34.72.160.161:4185/exams/getAllStudentExams';
     const response = await axios.get(apiURL + `/${id}`);
     var passedExams = response.data.passedExams;
     var nonPassedExams = response.data.nonPassedExams;
