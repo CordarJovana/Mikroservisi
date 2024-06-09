@@ -27,7 +27,7 @@ function ExamRegistration(props) {
                             <button className="exam-registration-button" onClick={() => {
                                 const ispitId = registration.id;
                                 const studentId = id;
-                                axios.post(`http://34.28.30.203:900/deletePrijava`, { ispitId, studentId })
+                                axios.post(`http://35.224.191.73:9000/deletePrijava`, { ispitId, studentId })
                                     .then(response => {
                                         console.log(response.data);
                                         setRefresh(!refresh);
@@ -49,7 +49,7 @@ function ExamRegistration(props) {
                             <button className="exam-registration-button" onClick={() => {
                                 const ispitId = registration.id;
                                 const studentId = id;
-                                axios.post('http://34.28.30.203:900/createNewPrijava', { ispitId, studentId })
+                                axios.post('http://35.224.191.73:9000/createNewPrijava', { ispitId, studentId })
                                     .then(response => {
                                         console.log(response.data);
                                         setRefresh(!refresh);
