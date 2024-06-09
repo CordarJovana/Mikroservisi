@@ -11,7 +11,7 @@ function Subjects(props) {
   useEffect(() => {
     async function fetchSubjects() {
       try {
-        const response = await axios.get(`http://35.222.226.126:1337/getAllStudentSubjects/${id}`);
+        const response = await axios.get(`http://35.222.157.204:1337/getAllStudentSubjects/${id}`);
         setSubjects(response.data.result);
       } catch (error) {
         console.error(error);

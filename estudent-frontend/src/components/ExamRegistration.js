@@ -11,7 +11,7 @@ function ExamRegistration(props) {
     const [refresh, setRefresh] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://35.222.226.126:1337/getActiveExamRegistrations/${id}`)
+        axios.get(`http://35.222.157.204:1337/getActiveExamRegistrations/${id}`)
             .then(response => {
                 const examRegistrationsExisting = response.data.withPrijave;
                 const examRegistrationsNonExisting = response.data.withoutPrijave;

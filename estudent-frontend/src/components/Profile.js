@@ -18,7 +18,7 @@ function Profile(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://35.222.226.126:1337/getStudent/${id}`);
+        const response = await axios.get(`http://35.222.157.204:1337/getStudent/${id}`);
         setStudent(response.data);
       } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ function Profile(props) {
   const handlePasswordFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://35.222.226.126:1337/changePassword/${id}`, passwordFormData);
+      const response = await axios.post(`http://35.222.157.204:1337/changePassword/${id}`, passwordFormData);
       setShowPasswordForm(false);
       setPasswordFormData({ oldPassword: '', newPassword: '' });
       var responseStatus = response.data.responseStatus;
